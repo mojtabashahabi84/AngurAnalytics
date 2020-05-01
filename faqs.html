@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<title>Angur Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.AA-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="AA-top">
+  <div class="AA-bar AA-red AA-card AA-left-align AA-large">
+    <a href="index.html" class="AA-bar-item AA-button AA-padding-large AA-white">Back to Home</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+
+</div>
+
+<!-- Header -->
+<header class="AA-container AA-red AA-center" style="padding:80px 16px">
+  <img id="grape" src="faq.png" alt="faqs-img">
+  <h1 class="AA-margin AA-jumbo">Have some Questions?</h1>
+
+
+    <button type="button" class="collapsible">Question 1</button>
+    <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button type="button" class="collapsible">Question 2</button>
+    <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button type="button" class="collapsible">Question 3</button>
+    <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button type="button" class="collapsible">Question 4</button>
+    <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
+</script>
+
+
+</header>
+
+ <!-- Footer -->
+<footer class="AA-container AA-padding-64 AA-center AA-opacity">
+  <div class="AA-xlarge AA-padding-32">
+
+    <i class="fa fa-facebook-official AA-hover-opacity"></i>
+    <i class="fa fa-instagram AA-hover-opacity"></i>
+    <i class="fa fa-snapchat AA-hover-opacity"></i>
+    <i class="fa fa-pinterest-p AA-hover-opacity"></i>
+    <i class="fa fa-twitter AA-hover-opacity"></i>
+    <i class="fa fa-linkedin AA-hover-opacity"></i>
+ </div>
+ <p>© 2020 Angor Analytics</p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("AA-show") == -1) {
+    x.className += " AA-show";
+  } else {
+    x.className = x.className.replace(" AA-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

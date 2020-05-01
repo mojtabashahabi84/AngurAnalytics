@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<title>Angur Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.AA-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="AA-top">
+  <div class="AA-bar AA-red AA-card AA-left-align AA-large">
+    <a href="index.html" class="AA-bar-item AA-button AA-padding-large AA-white">Back to Home</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+
+</div>
+
+<!-- Header -->
+<header class="AA-container AA-red AA-center" style="padding:128px 16px">
+  <img id="grape" src="email.png" alt="contact-img">
+  <h1 class="AA-margin AA-jumbo">Get in touch with us.</h1>
+
+  <div class="AA-container AA-padding-32 AA-center AA-opacity" id = "contactUS">
+    <h2>Contact US</h2>
+    <form name="submit-to-google-sheet2" onsubmit="submitFunction ()">
+      Name: </br><input id="contactName" name="contactName" type="text" placeholder="Name..." size="40" required></br>
+      Email address: </br><input id="contactEmail" name="contactEmail" type="email" placeholder="Email..." size="40" required></br>
+      Your message:</br> <textarea id="contactText" name="contactText" type="text" style="height:200px" cols="40" placeholder="Your message..." required></textarea></br>
+      <button type="submit" >Send</button>
+    </form>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwUucMtoJA9SglR6ZLjmWBdn_24VzGn59fB0Yq7VG9G6zbdjf8/exec'
+      const form = document.forms['submit-to-google-sheet2']
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+
+  <script>
+    function submitFunction() {
+      alert("Your message has been sent!")
+    }
+  </script>
+    <h5>Tel: (701) 730-8839 </h5>
+    <h5>e-mail: someemail@gmail.com </h5>
+
+  </div>
+
+</header>
+
+
+
+<!-- Footer -->
+<footer class="AA-container AA-padding-64 AA-center AA-opacity">
+  <div class="AA-xlarge AA-padding-32">
+
+    <i class="fa fa-facebook-official AA-hover-opacity"></i>
+    <i class="fa fa-instagram AA-hover-opacity"></i>
+    <i class="fa fa-snapchat AA-hover-opacity"></i>
+    <i class="fa fa-pinterest-p AA-hover-opacity"></i>
+    <i class="fa fa-twitter AA-hover-opacity"></i>
+    <i class="fa fa-linkedin AA-hover-opacity"></i>
+ </div>
+ <p>© 2020 Angor Analytics</p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("AA-show") == -1) {
+    x.className += " AA-show";
+  } else {
+    x.className = x.className.replace(" AA-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
